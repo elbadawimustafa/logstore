@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker build -t log-processor .
+docker run -p '8000:8000' -it log-processor

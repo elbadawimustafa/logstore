@@ -1,0 +1,22 @@
+[
+  {
+    "type": "user",
+    "timestamp": "2024-03-01T13:45:00.000Z",
+    "event_id": "u_123",
+    "event": {
+      "username": "my_user",
+      "email": "my_user@email.com",
+      "operation": "read/write"
+    }
+  },
+  {
+    "type": "system",
+    "timestamp": "2024-02-01T13:45:00.000Z",
+    "event_id": "s_123",
+    "event": {
+      "system_id": "id_123",
+      "location": "europe",
+      "operation": "read/write"
+    }
+  }
+]
