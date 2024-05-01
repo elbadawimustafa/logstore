@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, Response, status
-from svc import LogService, RecordLimit, NotFound
+from svc import LogService, NotFound
 
 app = FastAPI()
 service = LogService()
@@ -8,9 +8,6 @@ service = LogService()
 async def getLog(eventID: str, response: Response):
     try:
         log = service.getLog(eventID)
-    except RecordLimit as e:
-        response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"error": str(e)}
     except NotFound as e:
         response.status_code = status.HTTP_404_NOT_FOUND
         return {"error": str(e)}
