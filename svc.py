@@ -30,18 +30,14 @@ class LogService:
         if len(self.records.keys()) >= self.recordLimit:
             raise RecordLimit("record_limit")
         eventID = log["event_id"]
-        try:
-            found = self.records[eventID]
-            if found is not None:
-                raise DuplicateKey("event_id_exists")
-        except KeyError:
+        if self.records.get(eventID) is None:
             try:
                 if self.validLog(log):
                     self.records[eventID] = log
             except InvalidLog as e:
                 raise e
-
-
+        else:
+             raise DuplicateKey("event_id_exists")
 
     def validDateTime(self, dt):
        t = datetime.strptime(dt, self.dateTimeFormat)

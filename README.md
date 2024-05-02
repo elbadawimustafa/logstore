@@ -93,7 +93,6 @@ content-type: application/json
 - expand testing by adding negative cases, assert on exception messages when expecting an exception and use actual log objects.
 - Include test runs before spinning up the api.
 - svc.py:43-49 seem a bit rough - expecting a keyError exception as a guard to continue operation.
-- is `dict.get("key")` quicker or cleaner than `dict["key"]`?
 - better exception handling all around.
 - upper and lower cases strings in validations.
 - should the POST endpoint return 200 always as opposed to, say 201?
