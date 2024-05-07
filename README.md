@@ -93,7 +93,7 @@ content-type: application/json
 - expand testing by adding negative cases, assert on exception messages when expecting an exception and use actual log objects.
 - Include test runs before spinning up the api.
 - svc.py:43-49 seem a bit rough - expecting a keyError exception as a guard to continue operation.
-- better exception handling all around.
+- better exception handling all around fastAPI's HTTP and request validation `exception_handler`s ala https://fastapi.tiangolo.com/tutorial/handling-errors/#override-request-validation-exceptions.
 - upper and lower cases strings in validations.
 - should the POST endpoint return 200 always as opposed to, say 201?
 - don't just copy everything into the container, reduce the size and time to build.
